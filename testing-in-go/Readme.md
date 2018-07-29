@@ -1,19 +1,5 @@
 ## An Introduction to Testing in Go
 
-Testing is hugely important in all software. Being able to ensure the correctness of your code and ensure that any changes you make don’t end up breaking anything else in different parts of your codebase is hugely important.
-
-By taking the time to adequately test your go programs you allow yourself to develop faster with a greater sense of confidence that what you are developing will continue to work when you release it to production.
-
-### Table Of Contents
-
-- [Introduction](#introduction)
-- [Go Test Files](#go-test-files)
-- [A Simple Test File](#a-simple-test-file)
-- [Running Our Tests](#running-our-tests)
-- [Table Driven Testing](#table-driven-testing)
-- [Verbose Test Output](#verbose-test-output)
-
----
 #### Introduction
 In this tutorial we are going to look at how you can develop and run tests for your go code using the `go test` command.
 
