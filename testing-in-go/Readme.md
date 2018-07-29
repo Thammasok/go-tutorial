@@ -25,7 +25,6 @@ This is not an accident. These are the files which contain all of the unit tests
 
 ##### Version 1
 ```
-// An Example of how your project would be structured
 testing-in-go/
 ├─ main_test.go
 └─ main.go
@@ -33,13 +32,11 @@ testing-in-go/
 
 ##### Version 2
 ```
-// An Example of how your project would be structured Version1
 testing-in-go/
 ├─ libs/
 │   └─ calc.go
-├─ tests/
-│   └─ calc_test.go
-└─ main.go
+└─ tests/
+    └─ calc_test.go
 ```
 
 ---
