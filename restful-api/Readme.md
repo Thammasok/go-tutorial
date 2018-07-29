@@ -52,14 +52,18 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// Other Functions
-...
+func getUserById(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	key := vars["id"]
+
+	fmt.Println("Endpoint Hit: getUserById")
+	// Show the key receiving from API
+	fmt.Fprintf(w, "Key: "+key)
+}
 
 func handleRequestsV2() {
 	Router := mux.NewRouter().StrictSlash(true)
 
-	Router.HandleFunc("/", homePage)
-	Router.HandleFunc("/user", getAllUser)
 	Router.HandleFunc("/user/{id}", getUserById)
 	log.Fatal(http.ListenAndServe(":8081", Router))
 }
@@ -71,4 +75,51 @@ func main() {
 
 ```
 
+##### Path Variables
+So far so good, we’ve created a very simple REST API that returns a homepage and all our Articles. But what happens if we want to just view one article? Well, thanks to the gorilla mux router we can add variables to our paths and then pick and choose what articles we want to return based on these variables. Create a new route within your handleRequest function:
+
+```
+func getUserById(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	key := vars["key"]
+	var1 := vars["var1"]
+	var2 := vars["var2"]
+
+	fmt.Println("Var 1: " + var1)
+	fmt.Println("Var 2: " + var2)
+	fmt.Fprintf(w, "Key: "+key)
+}
+
+func handleRequestsV2() {
+	Router := mux.NewRouter().StrictSlash(true)
+
+	Router.HandleFunc("/user/{key}/{var1}/{var2}/", getUser)
+	log.Fatal(http.ListenAndServe(":8081", Router))
+}
+
+Router.HandleFunc("/user/{id}", getUserById)
+```
+
+##### Multiple Variables
+In our route above we’ve created an `id` variable. We are then accessing this `id` variable within our `getUser` function by creating a map called vars and then selecting the key value from this map. We are able to do this for however many variables we want to set in our path like so:
+
+```
+func getUser(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	key := vars["key"]
+	var1 := vars["var1"]
+	var2 := vars["var2"]
+
+	fmt.Println("Var 1: " + var1)
+	fmt.Println("Var 2: " + var2)
+	fmt.Fprintf(w, "Key: "+key)
+}
+
+func handleRequestsV2() {
+	Router := mux.NewRouter().StrictSlash(true)
+
+	Router.HandleFunc("/user/{key}/{var1}/{var2}/", getUser)
+	log.Fatal(http.ListenAndServe(":8081", Router))
+}
+```
 ---

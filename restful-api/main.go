@@ -35,6 +35,17 @@ func getUserById(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Key: "+key)
 }
 
+func getUser(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	key := vars["key"]
+	var1 := vars["var1"]
+	var2 := vars["var2"]
+
+	fmt.Println("Var 1: " + var1)
+	fmt.Println("Var 2: " + var2)
+	fmt.Fprintf(w, "Key: "+key)
+}
+
 func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Homepage Endpoint")
 }
@@ -51,6 +62,7 @@ func handleRequestsV2() {
 	Router.HandleFunc("/", homePage)
 	Router.HandleFunc("/user", getAllUser)
 	Router.HandleFunc("/user/{id}", getUserById)
+	Router.HandleFunc("/article/{key}/{var1}/{var2}/", getUser)
 	log.Fatal(http.ListenAndServe(":8081", Router))
 }
 
