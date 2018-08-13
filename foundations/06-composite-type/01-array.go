@@ -7,6 +7,7 @@ import (
 // Declaring named array types
 type matrixs [2][2][2][2]byte
 
+// 1. Basic
 func basicArray() {
 	// var <variable name> [<length>]<element_type>
 	// var val [100]int
@@ -68,6 +69,7 @@ func basicArray() {
 	})
 }
 
+// 2. len and cap
 func showArrayLen() {
 	seven := [7]string{"grumpy", "sleepy", "bashful"}
 	fmt.Println(len(seven), cap(seven))

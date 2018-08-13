@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// ประกาศตัวแปร
+// 1. ประกาศตัวแปร
 // var <identifier list> <type>
 func variableDeclaration() {
 	fmt.Println("> > > > > > > > > > Variable declaration < < < < < < < < < <")
@@ -51,7 +51,7 @@ func variableDeclaration() {
 	// fmt.Println("Number: ", number)
 }
 
-// ประกาศตัวแปร พร้อมระบุค่า
+// 2. ประกาศตัวแปร พร้อมระบุค่า
 // var <identifier list> <type> = <value list or initializer expressions>
 func initializedDeclaration() {
 	fmt.Println("> > > > > > > > > > Initialized declaration < < < < < < < < < <")
@@ -94,7 +94,7 @@ func initializedDeclaration() {
 	fmt.Println("Satellites: ", satellites)
 }
 
-//ประกาศตัวแปรแบบสั้น
+//3. ประกาศตัวแปรแบบสั้น
 func shortVariableDeclaration() {
 	fmt.Println("> > > > > > > > > > Short variable declaration < < < < < < < < < <")
 

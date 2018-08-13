@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Type as a pointer
+// 1. Type as a pointer
 // var valPtr *float32
 // var countPtr *int
 // var person *struct {
@@ -12,8 +12,8 @@ import "fmt"
 // var matrix *[1024]int
 // var row []*int64
 
+// 2. The address operator
 func addressOperator() {
-	// The address operator
 	// aptr -> address of a
 	var a int = 1024
 	var aptr *int = &a
@@ -22,8 +22,8 @@ func addressOperator() {
 	fmt.Printf("aptr=%v\n", aptr)
 }
 
+// 3. The new() function
 func newFunction() {
-	// The new() function
 	intptr := new(int)
 	*intptr = 44
 

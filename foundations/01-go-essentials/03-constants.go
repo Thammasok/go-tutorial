@@ -6,7 +6,7 @@ import (
 )
 
 func constantVariable() {
-	// ประกาศค่าคงที่แบบระบุประเภท
+	// 1. ประกาศค่าคงที่แบบระบุประเภท
 	// const <identifier list> type = <value list or initializer expressions>
 	const a1, a2 string = "Mastering", "Go"
 	const b rune = 'G'
@@ -17,7 +17,7 @@ func constantVariable() {
 	const g complex64 = 5.0i
 	const h time.Duration = 4 * time.Second
 
-	// ประกาศค่าคงที่แบบไม่ระบุประเภท
+	// 2. ประกาศค่าคงที่แบบไม่ระบุประเภท
 	// const <identifier list> = <value list or initializer expression>
 	const i = "G is" + " for Go "
 	const j = 'V'
@@ -30,7 +30,7 @@ func constantVariable() {
 	const n = -5.0i * 3
 	const o = time.Millisecond * 5
 
-	// Assign Untyped const
+	// 3. Assign Untyped const
 	// const m2 = 1.414213562373095048801688724209698078569671875376...
 	// var u1 float32 = m2
 	// var u2 float64 = m2

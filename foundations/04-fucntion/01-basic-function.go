@@ -1,12 +1,12 @@
 package main
 
 // func <func-identifier>(<argument-list>) [<result-list>] { [return] [<value or expression list] }
-// Basic
+// 1. Basic
 func twoSum(numberOne, numberTwo int) int {
 	return numberOne + numberTwo
 }
 
-// Variadic
+// 2. Variadic
 func avg(nums ...float64) float64 {
 	n := len(nums)
 	t := 0.0
@@ -16,7 +16,7 @@ func avg(nums ...float64) float64 {
 	return t / float64(n)
 }
 
-// Function result parameters
+// 3. Function result parameters
 func div(op0, op1 int) (int, int) {
 	r := op0
 	q := 0

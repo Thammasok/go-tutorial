@@ -22,12 +22,13 @@ var (
 )
 
 // func main() {
+//	// 1. pass-by-reference
 // 	num := 2.807770
 // 	fmt.Printf("num=%f\n", num)
 // 	half(&num)
 // 	fmt.Printf("half(num)=%f\n", num)
 
-// 	// Anonymous
+// 	// 2. Anonymous
 // 	fmt.Printf("mul(25,7) = %d\n", mul(25, 7))
 // 	fmt.Printf("sqr(13) = %d\n", sqr(13))
 // 	fmt.Printf(
@@ -37,7 +38,7 @@ var (
 // 		}(94), // Send value 94
 // 	)
 
-// 	// Closures ใช้งานภายใน Code Block นั้นๆ
+// 	// 3. Closures ใช้งานภายใน Code Block นั้นๆ
 // 	for i := 0.0; i < 360.0; i += 45.0 {
 // 		rad := func() float64 {
 // 			return i * math.Pi / 180
